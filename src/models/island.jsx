@@ -75,17 +75,25 @@ export default function Island({
   };
 
   useEffect(() => {
+    // Add event listeners for pointer, keyboard and touch events
     const canvas = gl.domElement;
     canvas.addEventListener("pointerdown", handlePointerDown);
     canvas.addEventListener("pointerup", handlePointerUp);
     canvas.addEventListener("pointermove", handlePointerMove);
+    canvas.addEventListener("touchstart", handlePointerDown);
+    canvas.addEventListener("touchmove", handlePointerMove);
+    canvas.addEventListener("touchend", handlePointerUp);
     window.addEventListener("keydown", handleKeyDown);
     window.addEventListener("keyup", handleKeyUp);
 
+    // Remove event listeners
     return () => {
       canvas.removeEventListener("pointerdown", handlePointerDown);
       canvas.removeEventListener("pointerup", handlePointerUp);
       canvas.removeEventListener("pointermove", handlePointerMove);
+      canvas.removeEventListener("touchstart", handlePointerDown);
+      canvas.removeEventListener("touchmove", handlePointerMove);
+      canvas.removeEventListener("touchend", handlePointerUp);
       window.removeEventListener("keydown", handleKeyDown);
       window.removeEventListener("keyup", handleKeyUp);
     };
