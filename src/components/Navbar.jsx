@@ -26,6 +26,16 @@ const Navbar = () => {
         >
           Projects
         </NavLink>
+        <NavLink
+          to="/dev"
+          className={({ isActive }) =>
+            isActive
+              ? "text-blue-500  "
+              : "text-white-500 border p-1 px-2 font-semibold text-center -my-1 rounded-lg"
+          }
+        >
+          Ctrl + /
+        </NavLink>
       </nav>
     </header>
   );

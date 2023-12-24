@@ -9,6 +9,7 @@ import HomeInfo from "../components/HomeInfo";
 
 import sakura from "../assets/sakura.mp3";
 import { soundoff, soundon } from "../assets/icons";
+import TerminalDialog from "../components/TerminalDialog";
 
 const Home = () => {
   const audioRef = useRef(new Audio(sakura));
@@ -57,7 +58,23 @@ const Home = () => {
   const [planeScale, planePosition] = adjustPlaneForScreenSize();
 
   const [isRotating, setIsRotating] = useState();
-  useEffect(() => {});
+
+  //terminal logic
+  const [isTerminalOpen, setIsTerminalOpen] = useState(false);
+
+  const handleKeyDown = (e) => {
+    if (e.ctrlKey && e.key === "/") {
+      setIsTerminalOpen(!isTerminalOpen);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
 
   return (
     <section className="w-full h-screen relative">
@@ -69,6 +86,7 @@ const Home = () => {
           isRotating ? "cursor-grabbing" : "cursor-grab"
         }`}
         camera={{ near: 0.1, far: 1000 }}
+        frameloop="always"
       >
         <Suspense fallback={<Loader />}>
           <directionalLight position={[1, 1, 1]} intensity={2} />
@@ -102,6 +120,11 @@ const Home = () => {
           }}
         />
       </div>
+      {isTerminalOpen && (
+        <div className="overlay">
+          <TerminalDialog onClose={() => setIsTerminalOpen(false)} />
+        </div>
+      )}
     </section>
   );
 };
