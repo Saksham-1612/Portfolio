@@ -30,7 +30,7 @@ const Navbar = () => {
           to="/dev"
           className={({ isActive }) =>
             isActive
-              ? "text-blue-500  "
+              ? "text-blue-500 border border-black-500 p-1 px-2 font-semibold text-center -my-1 rounded-lg "
               : "text-white-500 border p-1 px-2 font-semibold text-center -my-1 rounded-lg"
           }
         >
