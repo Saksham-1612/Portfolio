@@ -130,43 +130,25 @@ export const projects = [
   {
     iconUrl: pricewise,
     theme: "btn-back-red",
-    name: "Dummy Project 1",
-    description: "This is a placeholder description for Dummy Project 1.",
-    link: "https://github.com/adrianhajdin/pricewise",
+    name: "Event O Matic",
+    description:
+      "This is a patented project. It helps us in managing the attendance of audiences in events ",
+    link: "https://event.saksham.uno",
   },
   {
-    iconUrl: threads,
-    theme: "btn-back-green",
-    name: "Dummy Project 2",
-    description: "This is a placeholder description for Dummy Project 2.",
-    link: "https://github.com/adrianhajdin/threads",
-  },
-  {
-    iconUrl: car,
+    iconUrl: estate,
     theme: "btn-back-blue",
-    name: "Dummy Project 3",
-    description: "This is a placeholder description for Dummy Project 3.",
-    link: "https://github.com/adrianhajdin/project_next13_car_showcase",
+    name: "Perfect 2 Cart",
+    description:
+      "Its a full fleged ecommerce website. With an amazing client and a great admin panel.",
+    link: "https://perfect2cart.com/",
   },
   {
     iconUrl: snapgram,
     theme: "btn-back-pink",
-    name: "Dummy Project 4",
-    description: "This is a placeholder description for Dummy Project 4.",
-    link: "https://github.com/adrianhajdin/social_media_app",
-  },
-  {
-    iconUrl: estate,
-    theme: "btn-back-black",
-    name: "Dummy Project 5",
-    description: "This is a placeholder description for Dummy Project 5.",
-    link: "https://github.com/adrianhajdin/projects_realestate",
-  },
-  {
-    iconUrl: summiz,
-    theme: "btn-back-yellow",
-    name: "Dummy Project 6",
-    description: "This is a placeholder description for Dummy Project 6.",
-    link: "https://github.com/adrianhajdin/project_ai_summarizer",
+    name: "Discover Arch",
+    description:
+      "Web Application of an Architectural Event Competions Host Organisation. With an integrated Payment gateway and Sheet API",
+    link: "https://www.discoverarch.org/",
   },
 ];
